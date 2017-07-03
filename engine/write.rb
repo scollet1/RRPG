@@ -12,17 +12,7 @@
 
 require 'yaml'
 
-def iterate h, fd
-  h.each do |k, v|
-    value = v || k
-    if value.is_a? Hash or value.is_a? Array
-      fd.puts fd.to_yaml "\e[34m#{k.capitalize}\e[0m:"
-      iterate value, fd
-    else
-      fd.print fd.to_yaml v ? "#{k.capitalize}: \e[35m#{v}\n\e[0m" : "\e[41m#{k}\e[0m"
-    end
-  end
-end
+
 
 def write object
   if (check object) == true
@@ -34,7 +24,6 @@ def write object
     File.open(path, "w") { |file|
       file.puts object.to_yaml
     }
-    bar = YAML.load_file(path)
     puts "File #{object.stats[:name].to_s.chomp}.rrpg created, press enter to continue."
     gets
   else
