@@ -16,37 +16,37 @@ class Npc < Player
     @stats = stat_manager name
   end
   def stat_manager name
-    return stats = Hash.new {
+    return stats = {
       :name => name,
       :details => {
-        :age => ,
-        :height => ,
-        :weight => ,
-        :eyes => ,
-        :skin => ,
-        :hair =>
-      }
+        :age => 35,
+        :height => 6,
+        :weight => 150,
+        :eyes => "default",
+        :skin => "default",
+        :hair => "default"
+      },
       :class => "default",
-      :background => ,
-      :race => ,
-      :alignment => ,
+      :background => "default",
+      :race => "default",
+      :alignment => "default",
       :level => 1,
       :exp => 0,
       :hp => {:hp => 25, :curr => 25, :temp => 0,},
-      :ac => ,
-      :init => ,
-      :spd => ,
-      :inspiration => ,
+      :ac => 0,
+      :init => 0,
+      :spd => 0,
+      :inspiration => 0,
       :stats => {
         :raw => {
-          :str => {:base => , :saving_throw => {:prof => 0, :efc => 0}},
-          :dex => {:base => , :saving_throw => {:prof => 0, :efc => 0}},
-          :con => {:base => , :saving_throw => {:prof => 0, :efc => 0}},
-          :int => {:base => , :saving_throw => {:prof => 0, :efc => 0}},
-          :wis => {:base => , :saving_throw => {:prof => 0, :efc => 0}},
-          :chr => {:base => , :saving_throw => {:prof => 0, :efc => 0}}
+          :str => {:base => 10, :saving_throw => {:prof => 0, :efc => 0}},
+          :dex => {:base => 10, :saving_throw => {:prof => 0, :efc => 0}},
+          :con => {:base => 10, :saving_throw => {:prof => 0, :efc => 0}},
+          :int => {:base => 10, :saving_throw => {:prof => 0, :efc => 0}},
+          :wis => {:base => 10, :saving_throw => {:prof => 0, :efc => 0}},
+          :chr => {:base => 10, :saving_throw => {:prof => 0, :efc => 0}}
         },
-        :skills {
+        :skills => {
           :acro => {:prof => 0, :efc => 0},
           :anim => {:prof => 0, :efc => 0},
           :arca => {:prof => 0, :efc => 0},
@@ -66,23 +66,22 @@ class Npc < Player
           :surv => {:prof => 0, :efc => 0}
         }
       },
-      :attacks {
-
+      :attacks => {
+        :melee => "default"
       },
       :inventory => {
         :equipment => {
           :armor => {
-
+            :chest => "default"
           },
           :weapons => {
-
+            :hand => "default"
           }
         }
       },
-      :traits {
-
+      :traits => {
+        :none => "default"
       }
-
     }
   end
 end

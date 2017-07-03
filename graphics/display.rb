@@ -12,6 +12,7 @@
 
 #!bin/usr/ruby
 require_relative '../error.rb'
+require_relative '../engine/create.rb'
 
 def animate
   system "clear"
@@ -37,18 +38,21 @@ def create_opts option
     1. Player
     2. NPC
     3. Monster"
-
-    return gets
+    return gets.to_i
   elsif option == 2
     puts "What name is this character?"
     return gets
   else
     error "create_opts"
+    create
   end
 end
 
-def edit_opts
+def edit_opts option
+  animate
+  
 end
 
 def fight_opts
+
 end

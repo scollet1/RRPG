@@ -17,7 +17,6 @@ require_relative 'engine/control.rb'
 
 def run
   control option = menu
-
 end
 
 run

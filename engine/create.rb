@@ -12,6 +12,7 @@
 
 require_relative '../graphics/display.rb'
 require_relative '../classes/player.rb'
+require_relative './write.rb'
 
 def create
   opts = create_opts 1
@@ -22,5 +23,11 @@ def create
     object = Npc.new name
   elsif opts == 3
     object = Monster.new name
+  else
+    error "create"
   end
+  animate
+  puts "Internal object #{object} has been created, attempting write to file."
+  write object
+  run
 end
