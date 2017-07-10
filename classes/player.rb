@@ -22,21 +22,21 @@ class Player
   def stat_manager name
     return stats = {
       :name => name,
-      :details => {
-        :age => 35,
-        :height => 6,
-        :weight => 150,
-        :eyes => "default",
-        :skin => "default",
-        :hair => "default"
-      },
+      :age => 35,
+      :height => 6,
+      :weight => 150,
+      :eyes => "default",
+      :skin => "default",
+      :hair => "default",
       :class => "default",
       :background => "default",
       :race => "default",
       :alignment => "default",
       :level => 1,
       :exp => 0,
-      :hp => {:hp => 25, :curr => 25, :temp => 0},
+      :hp => 25,
+      :curr => 25,
+      :temp => 0,
       :ac => 0,
       :init => 0,
       :spd => 0,
@@ -85,8 +85,7 @@ class Player
       },
       :traits => {
         :none => "default"
-      },
-      :obtype => Player
+      }
     }
   end
 end
